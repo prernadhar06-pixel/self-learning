@@ -34,11 +34,43 @@
                 console.log('almost there');
             }
         else{
-            console.log('you can\'t drive');
+            console.log('you can\'t drive'); //scopes help us avoid naming conflicts, any variable inside {} only exists inside
         }
          //if there's only one statement in the if-else branches, curly braces can be ignored.
 
+    if (5) {
+        console.log('truthy');
+    } //this is a truthy value, behaves true
+    // falsy values are false, 0, '', NaN, undefined, null. all others are truthy
+    const cartQuant = 5;
+    if(cartQuant>0){
+        console.log('cart has products'); //true
+    }
 
+    if(cartQuant){
+        console.log('cart has products'); //truthy
+    }
+
+    console.log(!0);
+
+    //NaN - NOT A NUMBER
+    console.log('text'/5);
+
+    let variable1; // undefined mean the variable doesnt have a value. can only use this syntax with let
+    console.log(variable1);
+    //to use with const, const variable1 = undefined; console.log(variable1);
+
+    const result = 0 ? 'truthy' : 'falsy'; //ternary operator
+    console.log(result);
+
+    false && console.log('hello'); //here, the and operator is used to gaurd the second condition as if the first statement is not true, it wont check the second one anyways. when AND operator is used like this, it is known as GAURD operator.
+    const message1 = false && 'hello';
+    conosole.log(message1);
+    const message2 = 5 && 'hello';
+    console.log(message2); 
+
+    // && checks if both are true, || checks if atleast one is true
+    true || value2 //if 1st value truthy->stops early, short circuits- DEFAULT operator
     </script>
 </body>
 </html>
