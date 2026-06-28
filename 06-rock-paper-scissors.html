@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="06-RPS.css">
+</head>
+<body>
+    
+    <div class="heading"><h1><b>Rock . Paper . Scissors</b></h1></div>
+    <div style="text-align: center;"><h2>Click on your move to play against the computer!</h2></div>
+    <div class="button-container">
+    <button id="button1" onclick="
+    const randomNo = Math.random(); //generates a random number between 0 and 1
+    let computerMove ='';
+    if(randomNo<0.33 && randomNo>=0){
+        computerMove = 'rock';
+    }else if(randomNo<0.66 && randomNo>=0.33){
+        computerMove = 'paper';
+    }else{
+        computerMove = 'scissors';
+        // var randomNo = 0.5; ---> var has an issue in this code because var does not follow the concept of scope, i.e.it does not only exist inside the backet or segment it's used in. gives arise to naming conflicts.
+    }
+    //console.log(computerMove);
+
+    let result = '';
+    if(computerMove=='rock') {
+        result = 'tie';
+    }else if(computerMove=='paper') {
+        result='you lose';
+    }else if(computerMove=='scissors') {
+        result='you win';
+    }
+
+    alert(`you picked rock, computer picked ${computerMove}. ${result}`);
+    ">
+    <img src="rock.png" alt="rock">Rock
+    </button>
+
+
+    <button id="button2" onclick="
+    randomNo = Math.random();
+    if (randomNo>=0 && randomNo<0.33){
+        computerMove= 'rock';
+    }
+    else if(randomNo>=0.33 && randomNo<0.66){
+        computerMove= 'paper';
+    }
+    else if(randomNo>=0.66&& randomNo<1){
+        computerMove='scissors';
+    }
+    if(computerMove=='rock'){
+        result='you win';
+    }else if(computerMove=='paper'){
+        result='tie';
+    }else if(computerMove=='scissors'){
+        result='you lose';
+    }
+    console.log(randomNo);
+    console.log(computerMove);
+    console.log(result);
+    alert(`you picked paper, computer picked ${computerMove}. ${result}`);  //IDK ABOUT TEMPLATE STRINGS YET
+    ">
+    <img src="paper.png" alt="paper" >Paper</button>
+
+
+    <button id="button3" onclick="
+    randomNo = Math.random();
+    if(randomNo>=0 && randomNo<0.33){
+        computerMove='rock';
+    }else if(randomNo>=0.33 && randomNo<0.66) {
+        computerMove='paper';
+    }else if(randomNo>=0.66 && randomNo<1) {
+        computerMove='scissors';
+    }
+    if(computerMove=='rock'){
+        result='you lose';
+    }else if(computerMove=='paper') {
+        result='you win';
+    }else if(computerMove=='scissors') {
+        result='tie';
+    }
+
+    alert(`you picked scissors, computer picked ${computerMove}. ${result}`);
+    ">
+    <img src="scissor.png" alt="scissors">Scissors</button>
+    </div>
+    
+    <script>
+
+    </script>
+</body>
+</html>
