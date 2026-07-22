@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title><style></style>
+</head>
+<body>
+    <script>
+        /*function function1() {
+            console.log('hello');
+            console.log(2+2);
+        }
+
+        function1();
+        function1();*/
+
+        function calculateTax(cost, taxPercent = 0.1 ){//parameter- only exist inside a function scope
+            console.log(cost * taxPercent); 
+            //console.log(taxPercent); will give NaN for 500 becoz nothing was passed to taxPercent in the second case. to solve this, either give valid parameters OR SET A DEFAULT VALUE FOR PARAMETER
+        }
+
+        calculateTax(2000, 0.2);
+        calculateTax(5000);//argument
+    </script>
+</body>
+</html>
