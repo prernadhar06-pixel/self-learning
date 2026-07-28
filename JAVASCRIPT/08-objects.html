@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title><style></style>
+</head>
+<body>
+    <script>
+        const product= { //an object lets us group multiple values together
+            name: 'socks', //name is a property- properties let us access various values
+            price: 100
+        };
+        console.log(product);
+        console.log(product.name); // accessing the value accociated with the name property
+        console.log(product.price); //dot notation
+
+        // we can use a property to also change a value in the object
+        product.name = 'cotton socks';
+        console.log(typeof product);
+
+        product.newProperty = true;
+        console.log(product);
+
+        delete product.newProperty;
+        console.log(product);
+
+        //object is just another type of value. objects make our code more organised. we can group different values/variables together
+
+         
+    </script>
+</body>
+</html>

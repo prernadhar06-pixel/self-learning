@@ -21,21 +21,20 @@
 
 
     <button id="button3" onclick="
-    // computerMove= pickComputerMove();
-    // if(computerMove=='rock'){
-    //     result='you lose';
-    // }else if(computerMove=='paper') {
-    //     result='you win';
-    // }else if(computerMove=='scissors') {
-    //     result='tie';
-    // }
-
-    // alert(`you picked scissors, computer picked ${computerMove}. ${result}`);
-    //
     playGame('scissors'); ">Scissors</button>
+    <button id="button4" onclick="
+    resetScore();
+    ">Reset score</button>
     </div>
     
     <script>
+        const score ={ 
+            wins: 0,
+            losses: 0,
+            ties: 0,
+        }; //the scope is outside the function because we need to update the vale every time a move is played
+
+
         function  playGame(playerMove) {
             const computerMove= pickComputerMove();
             let result = '';
@@ -67,8 +66,18 @@
                 }
             }
             
-
-            alert(`you picked ${playerMove}, computer picked ${computerMove}. ${result}`);
+            if(result ==='you win'){
+                score.wins += 1;
+            }else if(result ==='you lose'){
+                score.losses += 1;
+            }else if (result ==='tie'){
+                score.ties += 1;
+            }
+            console.log(score.wins);
+            console.log(score.losses);
+            console.log(score.ties);
+            alert(`you picked ${playerMove}, computer picked ${computerMove}. ${result} 
+Wins: ${score.wins}, losses: ${score.losses}, ties: ${score.ties}`); //template string has a feature where inside the strng if you simply press enter, the output string also transitions to the next line
                 }
         function pickComputerMove() {
             const randomNo = Math.random();
@@ -82,7 +91,14 @@
                 computerMove = 'scissors';
             }
             return computerMove;
-            };
+        };
+
+        function resetScore(){
+            score.wins = 0,
+            score.losses = 0,
+            score.ties = 0
+        }
+
     </script>
 </body>
 </html>
