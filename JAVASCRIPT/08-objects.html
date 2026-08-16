@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        const product= { //an object lets us group multiple values together
+        /*const product= { //an object lets us group multiple values together
             name: 'socks', //name is a property- properties let us access various values
             price: 100
         };
@@ -26,8 +26,55 @@
         console.log(product);
 
         //object is just another type of value. objects make our code more organised. we can group different values/variables together
+        */
 
-         
-    </script>
+        const product2 ={
+            name: 'shirt',
+            ['delivery-time']: '1 day',
+            //can save any type of value inside an object. even an object
+            rating: {  //nested object- makes more organized
+                stars: 4.5,
+                count: 87
+            },
+            fun: function function1 () {  //function is just another type of value in js
+                console.log('function inside object')
+            }
+        };
+        console.log(product2);
+        console.log(product2.name);  //dot notation
+        console.log(product['name']); //bracket notation - lets us use properties that dont work with dot notation. example:
+        console.log(produc2.delivery-time);  //dash is interpreted as minus sign.
+        console.log(product2['delivery-time']);  //gives undefined
+        //advantage: we can use a variable, calculation, or anything that results in a value
+        //usually use dot notation
+
+        console.log(product2.rating.count);
+        product2.fun();  //function inside an object is called a method
+        //console.log is a method. console is an object provided by js and log is a function
+        console.log(typeof console);
+        console.log(typeof console.log);
+        Math.random();
+
+
+        /*Built in objects. eg console, math
+        we'll learn about two more: JSON nad localStorage
+        About JSON built in object- it helps us work with JSON(Javascript Object Notation). its basically is like a syntax, like js but with less features.
+        all properties and values should use double quotes, can't use functions
+        is closely understood by almost all programming languages
+        we use this when we are sending some data between computers
+        also use it to store
+        
+        JSON object helps us convert js to json*/
+
+        console.log(JSON.stringify(product2)); //method of json object
+        console.log(typeof JSON.stringify(product2));
+        //from json to js- using .parse method
+        const jsonString = JSON.stringify(product2);
+        console.log(JSON.parse(jsonString));
+
+        /*saves value more permanently. variable saves values temporarily. local storage doesnt get deleted when page is refreshed or reopened
+
+
+</script>
 </body>
 </html>
