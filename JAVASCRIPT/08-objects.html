@@ -27,7 +27,7 @@
 
         //object is just another type of value. objects make our code more organised. we can group different values/variables together
         */
-
+        /*
         const product2 ={
             name: 'shirt',
             ['delivery-time']: '1 day',
@@ -66,14 +66,71 @@
         
         JSON object helps us convert js to json*/
 
-        console.log(JSON.stringify(product2)); //method of json object
+        /*console.log(JSON.stringify(product2)); //method of json object
         console.log(typeof JSON.stringify(product2));
         //from json to js- using .parse method
         const jsonString = JSON.stringify(product2);
-        console.log(JSON.parse(jsonString));
+        console.log(JSON.parse(jsonString)); */
 
-        /*saves value more permanently. variable saves values temporarily. local storage doesnt get deleted when page is refreshed or reopened
+        /*saves value more permanently. variable saves values temporarily. local storage doesnt get deleted when page is refreshed or reopened */
+        
 
+
+        //objects can have properties and methods.  
+        //other values also have properties and methods, for eg:
+        console.log('hello'.length);  //length property
+        console.log('hello'.toUpperCase());  //uppercase method
+        //but these are string and not objects. how come? because JS has a special feature called AUTO-BOXING. JS automatiically wraps this string in a special object first. also works with numbers and boolean. doesnt work with null and undefined. gives error
+
+        //Objects are refernces
+
+        const object1 = {  //object1 is just a reference variable that points to the property. this is like a shortcut. the object is somewhere else in the computer memory
+            message: 'hello'
+        };
+
+        const object2 = object1; // makes a copy of the reference that points to the object and not the object itself. makes js more efficient (for lets say an object is really big) -> COPY BY REFERENCE
+
+        object1.message = 'Good Job!';
+        console.log(object1);  //we are able to change the message property event though we created object with const. thats before the variable const just contaiins a reference to the object. so const prevents us from changing the reference in the variable but it doesnt prevent us from reaching into the reference
+        console.log(object2); //same output becoz reference
+
+        //we cant compare objects directly
+        const object3 = {
+            message: 'Good Job!'
+        };
+
+        console.log(object3 === object1); //becoz they are refences and the references are different for both
+        console.log(object2 === object1); // has same reference. gives truthy value
+
+
+        const object4= {
+            message: 'Good Job!',
+            price: 799
+        };
+
+        //const message = object4.message;
+        const { message, price } = object4 ; // shortcut- deconstruction
+
+        console.log(message);
+        console.log(price);
+
+        
+        const object5 ={
+            // message: message  //the variable
+            message,  //shorthand for if the property n variable name- same
+            // method: function function1(){
+            //    console.log('method');
+            //} 
+
+            method() {  //function name not needed- shorthand method syntax
+                console.log('method');
+            }
+        };
+
+        console.log(object5);
+        object5.method();
+
+        //shorthand method
 
 </script>
 </body>

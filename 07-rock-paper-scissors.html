@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+</head>
+<body>
+    
+    <div class="heading"><h1><b>Rock . Paper . Scissors</b></h1></div>
+    <div class="button-container">
+    <button id="button1" onclick="
+    const computerMove= pickComputerMove();
+    let result = '';
+    if(computerMove=='rock') {
+        result = 'tie';
+    }else if(computerMove=='paper') {
+        result='you lose';
+    }else if(computerMove=='scissors') {
+        result='you win';
+    }
+
+    alert(`you picked rock, computer picked ${computerMove}. ${result}`);
+    ">Rock
+    </button>
+
+
+    <button id="button2" onclick="
+    computerMove= pickComputerMove();
+    if(computerMove=='rock'){
+        result='you win';
+    }else if(computerMove=='paper'){
+        result='tie';
+    }else if(computerMove=='scissors'){
+        result='you lose';
+    }
+    alert(`you picked paper, computer picked ${computerMove}. ${result}`);  //IDK ABOUT TEMPLATE STRINGS YET
+    ">Paper</button>
+
+
+    <button id="button3" onclick="
+    computerMove= pickComputerMove();
+    if(computerMove=='rock'){
+        result='you lose';
+    }else if(computerMove=='paper') {
+        result='you win';
+    }else if(computerMove=='scissors') {
+        result='tie';
+    }
+
+    alert(`you picked scissors, computer picked ${computerMove}. ${result}`);
+    ">Scissors</button>
+    </div>
+    
+    <script>
+        function pickComputerMove() {
+            const randomNo = Math.random();
+            let computerMove ='';   
+            
+            if(randomNo<0.33 && randomNo>=0){
+                computerMove = 'rock';
+            }else if(randomNo<0.66 && randomNo>=0.33){
+                computerMove = 'paper';
+            }else{
+                computerMove = 'scissors';
+            }
+
+            return computerMove;
+            };
+    </script>
+</body>
+</html>

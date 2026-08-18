@@ -35,19 +35,22 @@
         //     ties: 0,
         // }; //the scope is outside the function because we need to update the vale every time a move is played
 
-        const score = JSON.parse(localStorage.getItem('score')); || {
+        const score = JSON.parse(localStorage.getItem('score')) || {
                 wins: 0,
                 losses: 0,
                 ties: 0
-            };
+            };  //how default operator works- if the left side is truthy (we hv a score). if left side is falsy (if score is null), then use the right side as a default value. does the same work as the if statement commented after this fraction of code. simplifies code.
 
-        if(!score) {
+        /* if(!score) {
             score = {
                 wins: 0,
                 losses: 0,
                 ties: 0
             };
-        }
+        } */
+
+            /* null vs undefined (falsy values, both represents that something doesnt have a value) . we use null when we intentionally want something to be empty. for example if a parameter has a default value. if the parameter is undefined, it'll use the default value. but if we use null, it wont use default value- it'll use null. */
+
 
         //console.log(localStorage.getItem('message'));
         console.log(score); //this is a string, convert back ti an object, using parse method
