@@ -11,8 +11,8 @@ int Postfix(string postfix){
         if(ch==' ')
         continue;
         if(isdigit(ch))
-        st.push(ch-'0');  //concept of ASCII values, converts ch to int. example: ch='7'. ch('0') == 48 (int), ch('7') == 55. '7' - '0' = 55-48 = 7
-        else{  //operators
+        st.push(ch -'0');  //concept of ASCII values, converts ch to int. example: ch='7'. ch('0') == 48 (int), ch('7') == 55. '7' - '0' = 55-48 = 7
+        else{  //operand
             int b = st.top();  // for correct sequence. becoz of LIFO, we need the one added later as the second operator, hence the firt top is b
             st.pop();  // remove the second operator
             int a = st.top();

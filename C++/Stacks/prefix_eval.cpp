@@ -8,7 +8,7 @@ int Prefix (string prefix){
         if(ch==' ')
         continue;
         if(isdigit(ch)){
-            st.push(ch-'0');
+            st.push(ch -'0');
         }else{
             int a = st.top();
             st.pop();
@@ -17,13 +17,13 @@ int Prefix (string prefix){
             switch(ch){
             case '+': st.push(a+b);
             break;
-            case'-': st.push(a-b);
+            case '-': st.push(a-b);
             break;
-            case'*': st.push(a*b);
+            case '*': st.push(a*b);
             break;
-            case'/': st.push(a/b);
+            case '/': st.push(a/b);
             break;
-            case'^': st.push(pow(a,b));
+            case '^': st.push(pow(a,b));
             break;
             }
         }

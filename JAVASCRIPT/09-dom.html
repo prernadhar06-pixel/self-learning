@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button>hello</button> 
+    <button class = "js-button"></button>   <!-- query selecter will only get the first button f not specified. to the get the second button we can add the class="..."attribute -->
+<script> /*
+          //dom is just another built in object like console - models the webpage
+    document.body.innerHTML = 'hello';  //replaces everything and replaces ut with the dom object
+    document.title = 'Good Job!';  
+
+          console.log(document.title);
+          document.title = 'Changed';
+          console.log(document.title);
+          console.log(document.body);  //puts the entire <body> tag inside dom
+            //we can use html elements inside js- dom combines them together. html element is converted into js object
+        console.log(typeof document.body);  //object
+
+        console.log(document.body.innerHTML) ;  //controls entire html inside body 
+        document.body.innerHTML = '<button>Good job!</button>';  //replaces everything inside <body> tag to dom properties
+        */
+        
+        console.log(document.querySelector('button').innerHTML); //is a method that lets us get any element from the page and put it inside js. the button element here is just a js object. the second innerHTML method lets us acces the html of button 
+        document.querySelector('button')
+            .innerHTML = 'Changed';  //using a tab is important
+        console.log(document.querySelector('.js-button'));  //id selector - (#), class selector is (.). gives access to the second button
+</script>
+</body>
+</html>

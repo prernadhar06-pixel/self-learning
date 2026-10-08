@@ -15,8 +15,8 @@
         console.log(3<5);
         console.log(3>5);
 
-        console.log(5=='5.00');  //== tries to convert both values into the same type
-        console.log(5==='5.00'); //more strict for type
+        console.log(5 == '5.00');  //== tries to convert both values into the same type
+        console.log(5 === '5.00'); //more strict for type
         //also, comparison operators have lower precedance than arithmatic operators
 
         if(true) {
@@ -30,17 +30,17 @@
             console.log('you can drive');
             console.log('congrats');
         }
-            else if(age>=14){
-                console.log('almost there');
-            }
+        else if(age>=14){
+            console.log('almost there');
+        }
         else{
             console.log('you can\'t drive'); //scopes help us avoid naming conflicts, any variable inside {} only exists inside
         }
          //if there's only one statement in the if-else branches, curly braces can be ignored.
 
     if (5) {
-        console.log('truthy');
-    } //this is a truthy value, behaves true
+        console.log('truthy'); 
+    } //this is a truthy value, behaves true. any non zero value is truthy. even negatives or decimals
     // falsy values are false, 0, '', NaN, undefined, null. all others are truthy
     const cartQuant = 5;
     if(cartQuant>0){
@@ -51,7 +51,7 @@
         console.log('cart has products'); //truthy
     }
 
-    console.log(!0);
+    console.log(!0); //flips falsey value
 
     //NaN - NOT A NUMBER
     console.log('text'/5);
@@ -65,7 +65,7 @@
 
     false && console.log('hello'); //here, the and operator is used to gaurd the second condition as if the first statement is not true, it wont check the second one anyways. when AND operator is used like this, it is known as GAURD operator.
     const message1 = false && 'hello';
-    conosole.log(message1);
+    console.log(message1);
     const message2 = 5 && 'hello';
     console.log(message2); 
 

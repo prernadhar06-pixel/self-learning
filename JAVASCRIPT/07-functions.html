@@ -17,7 +17,7 @@
 
         function calculateTax(cost, taxPercent = 0.1 ){//parameter- only exist inside a function scope
             console.log(cost * taxPercent); 
-            //console.log(taxPercent); will give NaN for 500 becoz nothing was passed to taxPercent in the second case. to solve this, either give valid parameters OR SET A DEFAULT VALUE FOR PARAMETER
+            //console.log(taxPercent); will give NaN for 5000 becoz nothing was passed to taxPercent in the second case. to solve this, either give valid parameters OR SET A DEFAULT VALUE FOR PARAMETER. so we gave a default parameter 0.1 here. if thhere's two arguments given- function will use the argument. if not, it'll use defaut argument.
         }
 
         calculateTax(2000, 0.2);
